@@ -1,0 +1,65 @@
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<div class="row">
+  <div class="col-lg-2">
+<div class="vertical-menu" style="margin-top:60px">
+  <br>
+
+  <a style="text-align: center;"><i class='fas fa-user-tie' style='font-size:56px ;'></i></a>
+  <a href="dashboard" class="active">Admin Home</a>
+  <a href="manageTrain">Manage Train</a>
+  <a href="manageReservation">Manage Reservation</a>
+  <a href="viewPayment">Manage Payment</a>
+  
+</div>
+</div>
+<div class="col-lg-10">
+    <ul class="nav">
+        <li class="nav-item" style="margin-left: 20%; padding-right: 80px;">
+            <h2>search Train By startLocation</h2>
+        <input type="text" class="form-control" [(ngModel)] = "startLocation" (ngModelChange)=searchSta() placeholder="Enter the startLocation" style="display: inline-block;">
+    </li>
+    <li class="nav-item">
+        <h2>search Train By Destination</h2>
+        <input type="text" class="form-control" [(ngModel)] = "destination" (ngModelChange)=search() placeholder="Enter the Destination">
+    </li>
+    </ul>
+    <br>
+    <div class="container text-right">
+    <button class="btn btn-danger" ><a href="AddTrain" style="color: white;">Add Train</a> </button>
+</div>
+
+    <div class="container"> 
+<table class="table table-stripped table-bordered ">
+    <thead>
+        <tr>
+            <th>trainNo</th>
+            <th>trainName</th>
+            <th>startLocation</th>
+            <th>destination</th>
+            <th>ticketFair</th>
+            <th>availableDate</th>
+            <th>action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let train of trains">
+        <td>{{train.trainNo}}</td>
+        <td>{{train.trainName}}</td>
+        <td>{{train.startLocation}}</td>
+        <td>{{train.destination}}</td>
+        <td>{{train.ticketFair}}</td>
+        <td>{{train.availableDate}}</td>
+        <td><button class="btn btn-primary" (click)="updateTrain(train.trainNo)" style="margin-right: 10px;">update</button>
+            <button class="btn btn-danger" (click)="deleteTrain(train.trainNo)" style="margin-right: 10px;">delete</button>
+            <button class="btn btn-success" (click)="viewTrain(train.trainNo)">view</button>
+        </td>
+        </tr>
+    </tbody>
+</table>
+<br><br>
+<br>
+<br>
+<br><br>
+</div>
+</div>
+</div>

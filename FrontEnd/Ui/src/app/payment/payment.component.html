@@ -1,0 +1,103 @@
+<section class="header">
+  <div class="container">
+
+      <h1>Confirm Your Payment</h1>
+      <form style="margin-left:30%; font-weight: bold; height: 450px; width: 500px;
+    border-radius: 20px; " [formGroup]="registerForm" >
+        <div class="form-group">
+          <label>Reservation Id:</label>
+          <br>
+          <input type="rId" formControlName="rId" name="rId" id="rId" autocomplete="off" placeholder="Reservation Id name" required><br>
+          <span *ngIf="isValid('rId')" class="text-danger">Reservation id is required</span>
+      </div>
+        <div class="form-group">
+          <label>Card Holder Name:</label>
+          <br>
+          <input type="name" formControlName="name" name="name" id="name" autocomplete="off" placeholder="Card Holder name" required><br>
+          <span *ngIf="isValid('name')" class="text-danger">Card Holder is required</span>
+      </div>
+      <div class="form-group">
+        <label>Card Number</label>
+        <br>
+        <input type="cardnumber" formControlName="cardnumber" name="cardnumber" id="cardnumber" autocomplete="off" placeholder="card-number" required><br>
+        <span *ngIf="isValid('cardnumber')" class="text-danger">card-number is required</span>
+    </div>
+         <div class="row">
+           <div class="col-lg-4">
+           
+           <div class="form-group" style=" margin-left: 50px; ">
+            <label>Exp Date</label>
+            <br>
+            <input type="date" formControlName="exp" name="Exp" id="Exp" autocomplete="off" placeholder="Exp date" required><br>
+         
+           <span *ngIf="isValid('exp')" class="text-danger">expiration Date is required</span>
+          </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="form-group" style=" margin-left: 70px;">
+              <label>CVV</label>
+              <br>
+              <input type="CVV" formControlName="cVV" name="CVV" id="CVV" autocomplete="off" placeholder="Enter CVV" required><br>
+           
+             <span *ngIf="isValid('cVV')" class="text-danger">CVV is required</span>
+            </div>
+          </div>
+         </div>
+    
+              <div class="cards">
+                  <img src="https://www.pngall.com/wp-content/uploads/2016/07/Mastercard-Download-PNG.png" alt="">
+                  <img src="https://seeklogo.com/images/V/visa-logo-6F4057663D-seeklogo.com.png" alt="">
+                  <img src="https://www.kindpng.com/picc/m/44-440826_chad-hurley-paypal-logo-hd-png-download.png" alt="">
+              </div>
+              <br>
+           <button class="btn btn-primary btn-large"  (click)="saveit()" style="border-radius: 5px;">Pay</button>
+    </form>
+    </div>
+
+  </section>
+
+<!-- <div class="reg">
+    <form style="margin-left:30%; font-weight: bold; height: 450px; width: 500px;
+    border-radius: 20px; " [formGroup]="registerForm" >
+   <div style="margin-left: 8%; padding-top: 5%;">
+      <h2 >Registration form for <strong style="color: #66B2FF;">User</strong></h2>
+      <p >Please fill in this form to create an account.</p>
+          <div class="form-group" style="color: black;">
+            <input type="orderId" formControlName="orderId" name="orderId" id="orderId" autocomplete="off" placeholder="Payment Id" required><br>
+            <span *ngIf="isValid('orderId')" class="text-danger">Id is required</span>
+        </div>
+        <div class="form-group" style="color: black;">
+            <input type="amount" formControlName="orderId" name="orderId" id="orderId" autocomplete="off" placeholder="976.23" value="976.23"  required><br>
+        </div>
+
+    <div class="form-group">
+        <label>Do U Want to confirm?</label>
+        <br>
+        <input type="status" formControlName="status" name="username" id="username" autocomplete="off" placeholder="Confirm Status" disabled="true" ><br>
+        
+    </div>
+          <a>
+              <button type="submit" id="signin" class="btn btn-default" (click)="register()" [disabled]="!registerForm.valid">Register</button>
+          </a>
+  </div>
+      </form>  
+    </div>        -->
+    
+    <!-- <br>
+    <div class="container mt-5 text-center">
+        <h2>Payment Checkout</h2>
+        <div class="row mt-20">
+          <div class="col-md-8 " style="padding-left: 35%;">
+            <button (click)="pay(347.5)" class="btn btn-primary btn-block">Pay 347.5</button>
+          </div> -->
+          <!-- <div class="col-md-4">
+            <button (click)="pay(30)" class="btn btn-success btn-block">Pay $30</button>
+          </div>
+          <div class="col-md-4">
+            <button (click)="pay(50)" class="btn btn-info btn-block">Pay $50</button>
+          </div>     -->
+        <!-- </div> -->
+        <!-- <p class="mt-5">
+            Try it out using the test card number <b>4242 4242 4242 4242</b>, a random three-digit CVC number, any expiration date in the future, and a random five-digit U.S. ZIP code.
+        </p> -->
+      <!-- </div> -->

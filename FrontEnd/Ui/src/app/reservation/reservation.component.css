@@ -1,0 +1,16 @@
+/* .form-group{
+    margin-left: 400px;
+    width: 40%;
+   
+    
+} */
+.page {
+    background:rgba(1, 1,1, 0.5);
+    color: beige;
+    height: 700px;
+}
+.reg{
+    background-image: url("https://external-preview.redd.it/hiuQaRmKWDM9dM-CrRii-QUujhf7h6KFCPGWV0T3oYU.jpg?auto=webp&s=8328fc2702035efe8043d18ec75fa127f78ec237");
+    height: 750px;
+    width: 100%;
+}

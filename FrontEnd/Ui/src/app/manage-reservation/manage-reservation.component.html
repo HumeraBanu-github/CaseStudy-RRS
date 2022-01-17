@@ -1,0 +1,50 @@
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<div class="row">
+  <div class="col-lg-2">
+<div class="vertical-menu" style="margin-top:60px">
+  <br>
+
+  <a style="text-align: center;"><i class='fas fa-user-tie' style='font-size:56px ;'></i></a>
+  <a href="dashboard" class="active">Admin Home</a>
+  <a href="manageTrain">Manage Train</a>
+  <a href="manageReservation">Manage Reservation</a>
+  <a href="viewPayment">Manage Payment</a>
+  
+</div>
+</div>
+  <div class="col-lg-10">
+    <div class="container"> 
+<table class="table table-stripped table-bordered ">
+    <thead>
+        <tr>
+            <th>Reservation ID</th>
+            <th>availableDate</th>
+            <th>startLocation</th>
+            <th>destination</th>
+            <th>ticketFair</th>
+            <th>passengers</th>
+            <th>Total ticket Fair</th>
+            <th>status</th>
+            <th>action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let order of orders">
+        <td>{{order.rId}}</td>
+        <td>{{order.availableDate}}</td>
+        <td>{{order.startLocation}}</td>
+        <td>{{order.destination}}</td>
+        <td>{{order.ticketFair}}</td>
+        <td>{{order.passengers}}</td>
+        <td>{{order.totalTicketFair}}</td>
+        <td>{{order.status}}</td>
+        <td>
+            <button class="btn btn-danger" (click)="deleteReservation(order.rId)" style="margin-right: 10px;">delete</button>
+        </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<br>
+</div>
+</div>

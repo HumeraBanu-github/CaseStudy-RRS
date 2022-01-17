@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Railway Reservation</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    
+    <ul class="nav">
+        <li class="nav-item" style="margin-left: 20%; padding-right: 80px;">
+            <h2>search Train By startLocation</h2>
+        <input type="text" class="form-control" [(ngModel)] = "startLocation" (ngModelChange)=searchSta() placeholder="Enter the startLocation" style="display: inline-block;">
+    </li>
+    <li class="nav-item">
+        <h2>search Train By Destination</h2>
+        <input type="text" class="form-control" [(ngModel)] = "destination" (ngModelChange)=search() placeholder="Enter the Destination">
+    </li>
+    </ul>
+    <br>
+    <br>
+    <div class="container"> 
+<table class="table table-stripped table-bordered ">
+    <thead>
+        <tr>
+            <th>trainNo</th>
+            <th>trainName</th>
+            <th>startLocation</th>
+            <th>destination</th>
+            <th>ticketFair</th>
+            <th>availableDate</th>
+            <th>action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let train of trains">
+        <td>{{train.trainNo}}</td>
+        <td>{{train.trainName}}</td>
+        <td>{{train.startLocation}}</td>
+        <td>{{train.destination}}</td>
+        <td>{{train.ticketFair}}</td>
+        <td>{{train.availableDate}}</td>
+        <td><button class="btn btn-primary" (click)="AddReservation(train.trainNo)">Select</button></td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<br>
+<br>
+<br>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<div class="row">
+  <div class="col-lg-2">
+<div class="vertical-menu" style="margin-top:60px">
+  <br>
+
+  <a style="text-align: center;"><i class='fas fa-user-tie' style='font-size:56px ;'></i></a>
+  <a href="dashboard" class="active">Admin Home</a>
+  <a href="manageTrain">Manage Train</a>
+  <a href="manageReservation">Manage Reservation</a>
+  <a href="viewPayment">Manage Payment</a>
+  
+</div>
+</div>      
+<div class="col-lg-10">
+<h2 class="text-center text-primary">Update Train Details </h2>
+            <form style="margin-left:30%; font-weight: bold;  height: 750px; width: 500px; background-color: whitesmoke;
+            border-radius: 20px;" [formGroup]="registerForm" >
+                  <div class="form-group" style="color: black;">
+                    <label>Train Number:</label>
+                    <br>
+                    <input type="trainNo" formControlName="trainNo" name="trainNo" id="trainNo" autocomplete="off" [(ngModel)]="trains.trainNo" placeholder="trainNo" required><br>
+                    <span *ngIf="isValid('trainNo')" class="text-danger">Id is required</span>
+                </div>
+                <div class="form-group" style="color: black;">
+                    <label>Train Name:</label>
+                    <br>
+                    <input type="trainName" formControlName="trainName" name="trainName" id="trainName" autocomplete="off" [(ngModel)]="trains.trainName"  placeholder="trainName" required><br>
+                    <span *ngIf="isValid('trainName')" class="text-danger">Id is required</span>
+                </div>
+                <div class="form-group" style="color: black;">
+                    <label>From(Location):</label>
+                    <br>
+                    <!-- <input type="startLocation" formControlName="startLocation" name="startLocation" id="startLocation" autocomplete="off" placeholder="From" required> -->
+                   <select  formControlName="startLocation" name="startLocation" id="startLocation" autocomplete="off"  [(ngModel)]="trains.startLocation"  placeholder="Select a location" required style="width: 200px;height: 30px; color: black;">
+                    <option value="Select" disabled>Select</option>
+                    <option value="Banglore">Banglore</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Mumbai">Mumbai</option>
+                  </select> 
+                    <br>
+                    <span *ngIf="isValid('startLocation')" class="text-danger">Select the location</span>
+                </div>
+                <div class="form-group" style="color: black;">
+                    <label>To(Location):</label>
+                    <br>
+                    <!-- <input type="startLocation" formControlName="startLocation" name="startLocation" id="startLocation" autocomplete="off" placeholder="From" required> -->
+                   <select formControlName="destination" name="destination" id="destination" autocomplete="off" [(ngModel)]="trains.destination" placeholder="Select a location" required style="width: 200px;height: 30px; color: black;">
+                    <option value="Select" aria-placeholder="select" disabled>Select</option>
+                    <option value="Banglore">Banglore</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Mumbai">Mumbai</option>
+                  </select> 
+                    <br>
+                    <span *ngIf="isValid('destination')" class="text-danger">Select the location</span>
+                </div>
+        
+            <div class="form-group" style="color: black;">
+                <label>Ticket Fair:</label>
+                <br>
+              <input type="ticketFair" formControlName="ticketFair" name="ticketFair" id="ticketFair" autocomplete="off" [(ngModel)]="trains.ticketFair"   placeholder="Set The Ticket Fair" required><br>
+              <span *ngIf="isValid('ticketFair')" class="text-danger">price is required</span>
+            </div>
+            <div class="form-group" style="color: black;">
+                <label>Train AvailableDate:</label>
+                <br>
+                <input type="date" formControlName="availableDate" name="availableDate" id="availableDate" autocomplete="off"   [(ngModel)]="trains.availableDate" placeholder="Set The Ticket Fair" required><br>
+                <span *ngIf="isValid('availableDate')" class="text-danger"> Available Date is required</span>
+              </div>
+                  <a>
+                      <button type="submit" id="add" class="btn btn-default btn-primary" (click)="update()" [disabled]="!registerForm.valid" style="margin-left: 35%;">Add Train</button>
+                  </a>
+              </form>
+        
+          </div>
+          </div>

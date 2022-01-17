@@ -1,0 +1,39 @@
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<div class="row">
+  <div class="col-lg-2">
+<div class="vertical-menu" style="margin-top:60px">
+  <br>
+
+  <a style="text-align: center;"><i class='fas fa-user-tie' style='font-size:56px ;'></i></a>
+  <a href="dashboard" class="active">Admin Home</a>
+  <a href="manageTrain">Manage Train</a>
+  <a href="manageReservation">Manage Reservation</a>
+  <a href="viewPayment">Manage Payment</a>
+  
+</div>
+</div>
+<div class="col-lg-10">
+<div class="container text-center" style="margin-top: 100px;">
+
+<h2>Train Detail</h2></div>
+<div style="margin-left: 300px;">
+    <label><b> Train Number : </b></label> {{trains.trainNo}}
+    <br>
+    <label><b> Train Name : </b></label> {{trains.trainName}}
+    <br>
+
+    <label><b> Train startLocation : </b></label> {{trains.startLocation}}
+    <br>
+
+    <label><b> Train destination : </b></label> {{trains.destination}}
+    <br>
+
+    <label><b> Ticket Fair : </b></label> {{trains.ticketFair}}
+    <br>
+    
+    <label><b> Train availableDate : </b></label> {{trains.availableDate}}
+<br>
+    <b><a href="manageTrain"> Click here! </a>to Go back</b>
+</div>
+</div>
+</div>

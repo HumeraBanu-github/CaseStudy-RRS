@@ -1,0 +1,26 @@
+<br>
+<form style="margin-left:30%; font-weight: bold; height: 420px; width: 450px; background-color: whitesmoke;
+border-radius: 20px; " [formGroup]="loginForm">
+<div style="margin-left: 8%; padding-top: 5%;">
+  <h2 >Login as a <strong style="color: #66B2FF;">Admin</strong></h2>
+  <p >Please fill in this form to login to your account.</p>
+
+     
+  <div class="form-group">
+    <input type="username" formControlName="username" name="username" id="pwd" autocomplete="off" placeholder="Username" required><br>
+    <span *ngIf="isValid('username')">Username Id is required</span>
+</div>
+ 
+  <br>
+
+  <div class="form-group">
+      <input type="password" formControlName="password" name="password" id="pwd" autocomplete="off" placeholder="Password" required><br>
+      <span *ngIf="isValid('password')">Password cannot be blank</span>
+    </div>
+
+  <a>
+      <button type="submit" id="signin" (click)="login()" class="btn btn-default btn-primary" [disabled]="!loginForm.valid" href="/">login</button>
+  </a>
+ 
+</div>
+</form>

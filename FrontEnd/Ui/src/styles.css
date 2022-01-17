@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+.footer{
+    background-color: darkgray;
+    height: 50px;
+    bottom: 0px;
+    width: 100%;
+    padding-top: 15px;
+    position: fixed;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

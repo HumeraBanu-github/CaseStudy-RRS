@@ -1,0 +1,47 @@
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<div class="row">
+  <div class="col-lg-2">
+<div class="vertical-menu" style="margin-top:60px">
+  <br>
+
+  <a style="text-align: center;"><i class='fas fa-user-tie' style='font-size:56px ;'></i></a>
+  <a href="dashboard" class="active">Admin Home</a>
+  <a href="manageTrain">Manage Train</a>
+  <a href="manageReservation">Manage Reservation</a>
+  <a href="viewPayment">Manage Payment</a>
+  
+</div>
+</div>
+<div class="col-lg-10">
+  <br>
+  <br>
+  <table class="table table-stripped table-bordered table-md" style="size: 500px;">
+    <thead>
+        <tr>
+          
+            <th>Transaction ID</th>
+            <th>Reservation ID</th>
+            <th>Card Holder Name</th>
+            <th>Card Number</th>
+            <th>Total Amount</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pay of payment">
+        <td>{{pay.txnId}}</td>
+        <td>{{pay.rId}}</td>
+        <td>{{pay.name}}</td>
+        <td>{{pay.cardnumber}}</td>
+        <td>{{pay.amount}}</td>
+        <td>{{pay.status}}</td>
+        <td><button class="btn btn-danger" (click)="deletePayment(pay.txnId)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<br>
+<br>
+</div>
+</div>
